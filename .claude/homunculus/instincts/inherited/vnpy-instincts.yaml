@@ -1,0 +1,477 @@
+# Instincts generated from https://github.com/cschanhniem/vnpy
+# Generated: 2026-05-14T16:31:00.405Z
+# Version: 2.0
+# NOTE: This file supplements (does not replace) any existing curated instincts.
+# High-confidence manually curated instincts should be preserved alongside these.
+
+---
+id: vnpy-commit-length
+trigger: "when writing a commit message"
+confidence: 0.6
+domain: git
+source: repo-analysis
+source_repo: https://github.com/cschanhniem/vnpy
+---
+
+# Vnpy Commit Length
+
+## Action
+
+Keep commit messages concise (~41 characters)
+
+## Evidence
+
+- Average commit message length: 41 chars
+- Based on 24 commits
+
+---
+id: vnpy-naming-files
+trigger: "when creating a new file"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/cschanhniem/vnpy
+---
+
+# Vnpy Naming Files
+
+## Action
+
+Use snake_case naming convention
+
+## Evidence
+
+- Analyzed file naming patterns in repository
+- Dominant pattern: snake_case
+
+---
+id: vnpy-import-relative
+trigger: "when importing modules"
+confidence: 0.75
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/cschanhniem/vnpy
+---
+
+# Vnpy Import Relative
+
+## Action
+
+Use relative imports for project files
+
+## Evidence
+
+- Import analysis shows relative import pattern
+- Example: import { x } from '../lib/x'
+
+---
+id: vnpy-export-style
+trigger: "when exporting from a module"
+confidence: 0.7
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/cschanhniem/vnpy
+---
+
+# Vnpy Export Style
+
+## Action
+
+Prefer named exports
+
+## Evidence
+
+- Export pattern analysis
+- Dominant style: named
+
+---
+id: vnpy-test-separate
+trigger: "when writing tests"
+confidence: 0.8
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/cschanhniem/vnpy
+---
+
+# Vnpy Test Separate
+
+## Action
+
+Place tests in the tests/ or __tests__/ directory, mirroring src structure
+
+## Evidence
+
+- Separate test directory pattern detected
+- Tests live in dedicated test folders
+
+---
+id: vnpy-workflow-documentation-update-fusion-module
+trigger: "when doing documentation update fusion module"
+confidence: 0.6
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/cschanhniem/vnpy
+---
+
+# Vnpy Workflow Documentation Update Fusion Module
+
+## Action
+
+Follow the documentation-update-fusion-module workflow:
+1. Edit or add multiple markdown (.md) and reStructuredText (.rst) files under docs/fusion/agent/, docs/fusion/info/, docs/fusion/strategy/, and docs/fusion/index.rst.
+2. Update index.rst files to reflect new or changed documentation.
+3. Optionally, update docs/index.rst to include new sections.
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~2x per month
+- Files: docs/fusion/agent/*.md, docs/fusion/agent/*.rst, docs/fusion/info/*.md
+
+---
+id: vnpy-workflow-ci-workflow-and-dependabot-update
+trigger: "when doing ci workflow and dependabot update"
+confidence: 0.6
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/cschanhniem/vnpy
+---
+
+# Vnpy Workflow Ci Workflow And Dependabot Update
+
+## Action
+
+Follow the ci-workflow-and-dependabot-update workflow:
+1. Edit .github/workflows/pythonapp.yml to upgrade action versions or tweak workflow logic.
+2. Edit or add .github/dependabot.yml to configure dependency update schedules.
+3. Optionally, update .github/CODEOWNERS for code review rules.
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~2x per month
+- Files: .github/workflows/pythonapp.yml, .github/dependabot.yml, .github/CODEOWNERS
+
+---
+id: vnpy-workflow-feature-development-with-ui-and-engine
+trigger: "when doing feature development with ui and engine"
+confidence: 0.6
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/cschanhniem/vnpy
+---
+
+# Vnpy Workflow Feature Development With Ui And Engine
+
+## Action
+
+Follow the feature-development-with-ui-and-engine workflow:
+1. Edit or add core logic in vnpy/trader/engine.py.
+2. Edit or add UI logic in vnpy/trader/ui/mainwindow.py and/or vnpy/trader/ui/widget.py.
+3. Add new protocol or integration file (e.g., vnpy/trader/wechat.py).
+4. Update pyproject.toml for dependencies or configuration.
+5. Optionally, update documentation and i18n files.
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~2x per month
+- Files: vnpy/trader/engine.py, vnpy/trader/ui/mainwindow.py, vnpy/trader/ui/widget.py
+
+---
+id: vnpy-workflow-alpha-module-enhancement-and-fix
+trigger: "when doing alpha module enhancement and fix"
+confidence: 0.6
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/cschanhniem/vnpy
+---
+
+# Vnpy Workflow Alpha Module Enhancement And Fix
+
+## Action
+
+Follow the alpha-module-enhancement-and-fix workflow:
+1. Edit or add files in vnpy/alpha/dataset/, vnpy/alpha/model/, vnpy/alpha/strategy/, and vnpy/alpha/lab.py.
+2. Update or add tests in tests/alpha/.
+3. Optionally, update pyproject.toml for configuration or typing.
+4. Update __init__.py files as needed.
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~2x per month
+- Files: vnpy/alpha/dataset/*.py, vnpy/alpha/model/models/*.py, vnpy/alpha/strategy/*.py
+
+---
+id: vnpy-instinct-file-naming-snake-case
+trigger: "When creating a new file in the codebase"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: cschanhniem/vnpy
+---
+
+# Vnpy Instinct File Naming Snake Case
+
+## Action
+
+Name the file using snake_case convention
+
+## Evidence
+
+- Pattern in files: vnpy/alpha/dataset/*.py, vnpy/trader/engine.py
+
+---
+id: vnpy-instinct-function-naming-camelCase
+trigger: "When defining a new function"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: cschanhniem/vnpy
+---
+
+# Vnpy Instinct Function Naming CamelCase
+
+## Action
+
+Use camelCase for function names
+
+## Evidence
+
+- Pattern in code: function definitions in Python files
+
+---
+id: vnpy-instinct-class-naming-pascal-case
+trigger: "When defining a new class"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: cschanhniem/vnpy
+---
+
+# Vnpy Instinct Class Naming Pascal Case
+
+## Action
+
+Use PascalCase for class names
+
+## Evidence
+
+- Pattern in code: class definitions in Python files
+
+---
+id: vnpy-instinct-constant-naming-screaming-snake-case
+trigger: "When defining a constant"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: cschanhniem/vnpy
+---
+
+# Vnpy Instinct Constant Naming Screaming Snake Case
+
+## Action
+
+Use SCREAMING_SNAKE_CASE for constant names
+
+## Evidence
+
+- Pattern in code: constants in Python files
+
+---
+id: vnpy-instinct-import-style-relative
+trigger: "When importing modules within the package"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: cschanhniem/vnpy
+---
+
+# Vnpy Instinct Import Style Relative
+
+## Action
+
+Use relative imports
+
+## Evidence
+
+- Pattern in code: from .module import ...
+
+---
+id: vnpy-instinct-export-style-named
+trigger: "When exporting functions or classes from a module"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: cschanhniem/vnpy
+---
+
+# Vnpy Instinct Export Style Named
+
+## Action
+
+Use named exports (explicit __all__ or direct import/export)
+
+## Evidence
+
+- Pattern in code: __all__ in __init__.py files
+
+---
+id: vnpy-instinct-test-location-separate
+trigger: "When adding new tests"
+confidence: 0.9
+domain: testing
+source: repo-analysis
+source_repo: cschanhniem/vnpy
+---
+
+# Vnpy Instinct Test Location Separate
+
+## Action
+
+Place test files in the separate 'tests' folder, mirroring module structure
+
+## Evidence
+
+- Pattern in files: tests/alpha/*.py
+
+---
+id: vnpy-instinct-test-alpha-module
+trigger: "When enhancing or fixing vnpy.alpha module"
+confidence: 0.9
+domain: testing
+source: repo-analysis
+source_repo: cschanhniem/vnpy
+---
+
+# Vnpy Instinct Test Alpha Module
+
+## Action
+
+Update or add corresponding tests in tests/alpha/
+
+## Evidence
+
+- Pattern in workflow: alpha-module-enhancement-and-fix
+- Pattern in files: tests/alpha/*.py
+
+---
+id: vnpy-instinct-commit-prefix
+trigger: "When writing a commit message"
+confidence: 0.9
+domain: git
+source: repo-analysis
+source_repo: cschanhniem/vnpy
+---
+
+# Vnpy Instinct Commit Prefix
+
+## Action
+
+Start the commit message with a prefix: [Add], [Mod], [Del], [Fix], or chore
+
+## Evidence
+
+- Seen in commit: [Add] Fusion版使用文档
+- Seen in commit: chore(ci): upgrade GitHub Actions to v4/v5
+
+---
+id: vnpy-instinct-commit-length
+trigger: "When composing a commit message"
+confidence: 0.8
+domain: git
+source: repo-analysis
+source_repo: cschanhniem/vnpy
+---
+
+# Vnpy Instinct Commit Length
+
+## Action
+
+Keep the commit message concise, around 40 characters on average
+
+## Evidence
+
+- Pattern: average commit message length is 41
+
+---
+id: vnpy-instinct-documentation-update-fusion
+trigger: "When someone wants to add or update Fusion module documentation"
+confidence: 0.95
+domain: workflow
+source: repo-analysis
+source_repo: cschanhniem/vnpy
+---
+
+# Vnpy Instinct Documentation Update Fusion
+
+## Action
+
+Edit or add .md/.rst files under docs/fusion/agent/, docs/fusion/info/, docs/fusion/strategy/, update docs/fusion/index.rst, and optionally docs/index.rst
+
+## Evidence
+
+- Workflow: documentation-update-fusion-module
+- Seen in commit: [Add] Fusion版使用文档
+
+---
+id: vnpy-instinct-ci-dependabot-update
+trigger: "When someone wants to update CI workflows or Dependabot settings"
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: cschanhniem/vnpy
+---
+
+# Vnpy Instinct Ci Dependabot Update
+
+## Action
+
+Edit .github/workflows/pythonapp.yml, .github/dependabot.yml, and optionally .github/CODEOWNERS
+
+## Evidence
+
+- Workflow: ci-workflow-and-dependabot-update
+- Seen in commit: chore(ci): upgrade GitHub Actions to v4/v5 and add Dependabot config
+
+---
+id: vnpy-instinct-feature-dev-ui-engine
+trigger: "When someone wants to add a new notification or communication feature (e.g., WeChat support)"
+confidence: 0.85
+domain: workflow
+source: repo-analysis
+source_repo: cschanhniem/vnpy
+---
+
+# Vnpy Instinct Feature Dev Ui Engine
+
+## Action
+
+Edit or add vnpy/trader/engine.py, vnpy/trader/ui/mainwindow.py, vnpy/trader/ui/widget.py, vnpy/trader/wechat.py, update pyproject.toml, and optionally documentation/i18n files
+
+## Evidence
+
+- Workflow: feature-development-with-ui-and-engine
+- Seen in commit: [Add] support WeChat iLink protocol for sending notifications
+
+---
+id: vnpy-instinct-alpha-module-enhancement
+trigger: "When someone wants to enhance or fix the alpha module"
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: cschanhniem/vnpy
+---
+
+# Vnpy Instinct Alpha Module Enhancement
+
+## Action
+
+Edit or add files in vnpy/alpha/dataset/, vnpy/alpha/model/, vnpy/alpha/strategy/, vnpy/alpha/lab.py, update or add tests in tests/alpha/, optionally update pyproject.toml and __init__.py
+
+## Evidence
+
+- Workflow: alpha-module-enhancement-and-fix
+- Seen in commit: Add missing DataProxy operators
+
